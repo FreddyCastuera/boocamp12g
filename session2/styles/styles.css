@@ -25,9 +25,9 @@
   }
   aside{
     background-color:	rgb(255, 0, 191);
-    float:right;
     width:35%;
     height:750px;
+    float:right;
   }
   footer{
     background-color:rgb(128, 0, 255);
