@@ -12,8 +12,11 @@
     align-items:center;
     flex-wrap: wrap;
     border:10px solid rgb(144, 240, 0);
-    width:80vw;
+    width:80vh;
     height:80vh;
+    margin: 10vh auto ;
+    
+  
 }
 
 .container-v{
