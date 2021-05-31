@@ -1,0 +1,58 @@
+*{
+  box-sizing: border-box;
+}
+div.cuadro1 {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  border: 3px solid red;
+}
+
+div.cuadro2{
+  position: absolute;
+  top:10vh;
+  right: 10vw;
+  width: 80vw;
+  height:80vh;
+  border: 3px solid green;
+}
+
+div.cuadro3{
+  position: absolute;
+  top:30vh;
+  right: 30vw;
+  width: 20vw;
+  height:20vh;
+  border: 3px solid red;
+}
+
+div.circulo{
+  width: 20vw;
+  height:20vh;
+  border: 3px solid blue;
+  border-radius: 100%
+}
+#cir1{
+  position: absolute;
+  top:5vh;
+  right:30vw;
+
+}
+#cir2{
+  position: absolute;
+  bottom:5vh;
+  right:30vw;
+
+}
+#cir3{
+  position: absolute;
+  left:5vh;
+  top:30vh;
+
+}
+#cir4{
+  position: absolute;
+  right:5vh;
+  top:30vh;
+
+}
