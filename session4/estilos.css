@@ -1,0 +1,21 @@
+.contenedor{
+    background-color:red;
+    width:40vh;
+    height:40vh;
+}
+input#cuadro:checked ~ div{
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    width:40vh;
+
+}
+input#circulo:checked ~ div{
+    transition: all 1s ease-in;
+    border-radius: 100%;
+    opacity: 0.5;
+}
+input#rectangulo:checked ~ div{
+    transition: all 1s ease-in;
+    width: 60vh;
+    opacity: .75;
+}
+
