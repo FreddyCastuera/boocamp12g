@@ -1,0 +1,37 @@
+form{
+    width:80vw;
+    height:80vh;
+    position: relative;
+}
+div{
+    position: absolute;
+}
+input:checked + p::before{
+    content: "desactivar ";
+    color: red;
+}
+input:not(:checked) + p::before{
+    content: "activar ";
+    color:green;
+}
+ @keyframes example {
+    0% {background-color: green;left:0;top:10% }
+    20% {background-color: blue;left:25%;top:50%;transform:scale(2,2)}
+    40% {background-color: red;left:50%;top:90%;transform:scale(3,3)}
+    60% {background-color: blue;left:75%;top:50%;transform:scale(2,2)}
+    80% {background-color: green;left:100%;top:10%}
+    100% {background-color: green;left:0;top:10%}
+  }
+  input:not(:checked)  ~ div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+  } 
+  /* The element to apply the animation to */
+  input:checked  ~ div {
+    width: 100px;
+    height: 100px;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count:infinite;
+  } 

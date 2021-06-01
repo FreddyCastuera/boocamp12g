@@ -1,0 +1,98 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+form{
+    width:100vw;
+    height:100vh;
+    display:flex;
+    background-color:blue;
+    flex-wrap: wrap;
+    justify-content:center;
+    position:relative;
+}
+label{
+    width:25%;
+    background-color:green;
+    border:1px solid purple;
+}
+input{
+ position:absolute;
+ top:25%;
+}
+#doce{
+    position:absolute;
+    left:10%;
+}
+#tres{
+    position:absolute;
+    left:35%;
+}
+#seis{
+    position:absolute;
+    left:60%;
+}
+#nueve{
+    position:absolute;
+    left:85%;
+}
+.reloj{
+    width:60vh;
+    height:60vh;
+    background-color:red;
+    align-self: center;
+    border-radius: 100%;
+    position:relative;
+}
+.larga{
+    width: 10px;
+    height: 95%;
+    background-color:chartreuse;
+    position:absolute;
+    left:50%;
+    top:5%;
+}
+.corta{
+    width:62%;
+    height: 10px;
+    background-color:rebeccapurple;
+    position:absolute;
+    top:50%;
+    left:20%;
+    
+}
+.larga > .mitad_inferior{
+    height: 50%;
+    width: 100%;
+    background-color:red;
+    position:absolute;
+    top:50%;
+}
+.corta > .mitad_inferior{
+    height: 100%;
+    width: 50%;
+    background-color:red;
+    position:absolute;
+    left:50%;
+}
+input#doce:checked ~ div.reloj > div.corta{
+    transform: rotate(90deg);
+}
+
+input#tres:checked ~ div.reloj > div.corta{
+    transform: rotate(180deg);
+}
+
+input#seis:checked ~ div.reloj > div.corta{
+    transform: rotate(270deg);
+}
+
+input#seis:checked ~ div.reloj > div.corta > .mitad_inferior{
+    background-color:chartreuse;
+    
+}
+
+input#nueve:checked ~ div.reloj > div.corta{
+    transform: rotate(360deg);
+}
