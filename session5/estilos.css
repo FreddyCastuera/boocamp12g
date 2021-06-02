@@ -1,0 +1,45 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.wrapper{
+    display: flex;
+    width: 100vw;
+    height: 15vh;
+    border: 1px solid red;
+    margin:10px;
+}
+.item{
+    width:5%;
+    height:50%;
+}
+.azul{
+    background-color: blue;
+}
+.verde{
+    background-color:green;
+}
+.purpura{
+    background-color:blueviolet;
+}
+
+.star{
+    justify-content: flex-start;
+}
+.end{
+    justify-content: flex-end;
+}
+.center{
+    justify-content:center;
+}
+.around{
+    justify-content: space-around;
+}
+.between{
+    justify-content: space-between;
+
+}
+.evenly{
+    justify-content: space-evenly;
+}
