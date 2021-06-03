@@ -1,3 +1,5 @@
+/*recuerda que para centrar un elemento en su contenedor de manera 
+horizontal puedes usar margin:auto*/
 *{
     box-sizing: border-box;
     margin:0;
@@ -53,6 +55,7 @@ img{
 }
 .item{
     width:80%;
+    height:100%;
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 1%;
