@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+:root{
+    font-size:16px;
+}
+body{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items:center;
+    height: 100vh;
+    div{
+        margin-top:10rem;
+        .btn{
+            padding:1rem 2rem;
+            font-size:2rem;
+        }
+        .inc{
+            background-color: green;
+            color:white
+        }
+        .dec{
+            background-color: red;
+            color:white;
+        }
+    }
+    span{
+        margin-top:2rem;
+        font-size:20rem;
+    }
+}
+.verde{
+    color:green
+}
+.rojo{
+    color:red;
+}
+.negro{
+    color:black;
+}

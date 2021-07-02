@@ -12,13 +12,6 @@ function weirdShit(string){
     return string[0] == string[string.length-1];
 }
 
-(function(){
-let string = prompt("ingresa el string");
-alert(whatIs(string));
-
-let string2 = prompt("ingresa el string");
-alert(weirdShit(string2));
-})()
 
 
 /*tarea*/
@@ -57,7 +50,6 @@ function randomString(n){
 }
 
 
-const random = (n,offset) => Math.floor((Math.random()*(n-offset))+offset);
 function randomStringRec(n,str=""){
     let current = String.fromCharCode(random(122,65));
     if(n==0){
@@ -87,5 +79,75 @@ function User(name,password){
         getPassword:getPassword
     }
 
-    return userApi;
+    return userAPI;
 }
+
+/*4 Crear una función que evalúe un string con las siguientes pruebas:
+Tener al menos 8 carácteres
+Tener al menos un número
+Tener al menos una mayúscula */
+function test2(str){
+    if(str.length>=8){
+        let bandera=false;
+        for(let i=0;i<str.length;i++){
+            if('0123456789'.includes(str[i])){
+                bandera=true;
+            }
+        }
+        if(bandera){
+            for(let i=0;i<str.length;i++){
+                if(str.charCodeAt(i)>=65 && str.charCodeAt(i)<=90){
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
+}
+
+function test3(n,str){
+
+
+}
+/*crear una funcion que permita indicar la cantidad de koders a guardar que pida tanto kodes como
+se indique y al final imprima el nombre del koder y su numero*/
+
+let koders=[];
+function printKoders(n){
+    let current;
+    for(let i=0;i<n;i++){
+        current=prompt("ingresa el nombre");
+        koders.push(current);
+    }
+    for(let i=0;i<n;i++){
+        console.log(`Koder ${i}:  ${koders[i]} `);
+    }
+}
+
+let size=prompt("ingresa el numero de koders");
+printKoders(size);
+
+function getKoder(index){
+    return koders[index];
+}
+function sortKoders(){
+    return koders.sort().reverse();
+}
+function formatKoders(){
+    let kodersAbr=[];
+    let abr;
+    for(let i=0;i<koders.length;i++){
+        abr= koders[i].split(" ").map(item=>item[0].toUpperCase()).join(". ");
+        abr=`${koders[i]} (${abr})`;
+        kodersAbr.push(abr);
+    }    
+    return kodersAbr;
+}
+
+
+
+/*crear una funcion que me permita saber nombre de el koder basado en su numero asignado*/
+/*imprimir lista de koders en orden alfabetico decendente */
+/*crear una nueva lista que contenga los nombre de los koders con la siguiente
+estructura: koder 1: Israel Salinas Martinez (I. S. M.) 
+            koder 2: Oscar Rodiguez Hernandez (O. R. H.)*/

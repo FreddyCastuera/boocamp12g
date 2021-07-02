@@ -1,0 +1,58 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-size: 16px;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+}
+body div {
+  margin-top: 10rem;
+}
+body div .btn {
+  padding: 1rem 2rem;
+  font-size: 2rem;
+}
+body div .inc {
+  background-color: green;
+  color: white;
+}
+body div .dec {
+  background-color: red;
+  color: white;
+}
+body span {
+  margin-top: 2rem;
+  font-size: 20rem;
+}
+
+.verde {
+  color: green;
+}
+
+.rojo {
+  color: red;
+}
+
+.negro {
+  color: black;
+}/*# sourceMappingURL=styles.css.map */

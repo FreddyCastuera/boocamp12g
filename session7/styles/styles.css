@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: blue;
+}
+
+.main {
+  background-color: red;
+}
+
+.aside {
+  background-color: chartreuse;
+}
+
+.footer {
+  background-color: pink;
+}
+
+.seccion {
+  background-color: purple;
+  width: 80%;
+  height: 50%;
+  margin: auto;
+}
+
+.nav {
+  background-color: skyblue;
+  width: 80%;
+  margin: auto;
+}
+
+.height-80 {
+  height: 80vh;
+}
+
+.height-10 {
+  height: 10vh;
+}
+
+.height-tercio {
+  height: 33%;
+}/*# sourceMappingURL=styles.css.map */
