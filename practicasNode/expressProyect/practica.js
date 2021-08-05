@@ -58,8 +58,6 @@ server.listen(8080, () => {
 const fs = require('fs')
 
 
-
-
 server.get('/koders', (request, response) => {
     const archivo = fs.readFileSync('./koders.json','utf-8')
     response.setHeader('Content-Type', 'application/json')
@@ -70,17 +68,16 @@ server.get('/koders', (request, response) => {
 server.post('/koders', (request, response) => {
     const archivo = fs.readFileSync('./koders.json','utf-8')
     const body = request.body
-    console.log('body:', body)
     let objecto = JSON.parse(archivo);
     objecto.koders.push(body);
-    let objetoString = JSON.stringify(objecto)
+    let objetoString = JSON.stringify(objecto);
     fs.writeFileSync('./koders.json',objetoString);
-
-    console.log(objecto['koders'])
     response.status(200).json({
         message: 'aqui se crea un koder'
     })
 })
+
+
 
 server.listen(8080, () => {
     console.log('listening on port localhost: 8080')
