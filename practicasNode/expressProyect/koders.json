@@ -1,1 +1,28 @@
-{"koders":[{"name":"Carlos Velasquez","generation":12},{"name":"Juan Pi","generation":10},{"name":"Fernanda","generation":7},{"name":"Vero","generation":10},{"name":"Cintia","generation":10},{"name":"freddy castuera","generation":12},{"name":"juan perez","generation":12},{"name":"hector hernandez","generation":12},{"name":"hector hernandez","generation":12},{"name":"hector hernandez","generation":12},{"name":"hector hernandez","generation":12},{"name":"hector hernandez","generation":12},{"name":"alfredo pizzana","generation":12},{"name":"karen ascencio","generation":12},{"name":"ubaldo canseca","generation":12},{"name":"carlos alcala","generation":12},{"name":"xochitl","generation":12},{"name":"misalchica","generation":12},{"name":"israel","tema":"javascript"}],"mentors":[{"name":"israel","tema":"javascript"},{"name":"fernanda","tema":"backEnd"}]}
+{
+  "koders": [
+    {
+      "id": 1,
+      "name": "toni tepic",
+      "genero": "m",
+      "generation": 12
+    },
+    {
+      "id": 2,
+      "name": "freddy Castuera",
+      "genero": "m",
+      "generation": 12
+    },
+    {
+      "id": 3,
+      "name": "karen ascencio",
+      "genero": "f",
+      "generation": 12
+    },
+    {
+      "id": 4,
+      "name": "toni tepic",
+      "genero": "f",
+      "generation": 12
+    }
+  ]
+}

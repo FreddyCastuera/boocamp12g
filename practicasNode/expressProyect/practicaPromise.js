@@ -7,6 +7,24 @@ const server = express()
 server.use(express.json())
 //usar metodo de fs read para leer el archivo
 const fs = require('fs').promises
+const fsN = require('fs')
+
+// función promificada para leer un archivo
+function readFilePromise(pathToRead) {
+    return new Promise((resolve, reject) => {
+        fsN.readFile(pathToRead, 'utf8', (err, content) => {
+            if (err) {
+                reject(err)
+            }else {
+                const json = JSON.parse(content)
+                resolve(json)
+            }
+        })
+    })
+}
+
+
+
 server.get('/koders', (request, response) => {
     const archivo = fs.readFile('./koders.json','utf-8')
     archivo
@@ -22,7 +40,7 @@ server.post('/koders', (request, response) => {
         console.log('body:', body);
         let objecto = JSON.parse(data);
         objecto.koders.push(body);
-        let objetoString = JSON.stringify(objecto)
+        let objetoString = JSON.stringify(objecto,null,2)
         fs.writeFile('./koders.json',objetoString);
         return fs.readFile('./koders.json','utf-8');
     })
@@ -47,7 +65,7 @@ server.post('/mentors', (request, response) => {
         console.log('body:', body);
         let objecto = JSON.parse(data);
         objecto.mentors.push(body);
-        let objetoString = JSON.stringify(objecto)
+        let objetoString = JSON.stringify(objecto,null,2)
         fs.writeFile('./koders.json',objetoString);
         return fs.readFile('./koders.json','utf-8');
     })
