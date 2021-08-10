@@ -14,15 +14,60 @@
     },
     {
       "id": 3,
-      "name": "karen ascencio",
+      "name": "Israel",
       "genero": "f",
-      "generation": 12
+      "generation": 12,
+      "module": "maquetado"
     },
     {
       "id": 4,
       "name": "toni tepic",
       "genero": "f",
       "generation": 12
+    },
+    {
+      "id": 5,
+      "name": "hector hernandez",
+      "genero": "f",
+      "generation": 12
+    },
+    {
+      "id": 6,
+      "name": "karen",
+      "genero": "f",
+      "generation": 12
+    }
+  ],
+  "mentors": [
+    {
+      "id": 1,
+      "name": "Mels",
+      "module": "hello koders"
+    },
+    {
+      "id": 2,
+      "name": "Oso",
+      "module": "hello koders"
+    },
+    {
+      "id": 3,
+      "name": "Israel",
+      "module": "maquetado"
+    },
+    {
+      "id": 4,
+      "name": "Isra",
+      "module": "Javascript"
+    },
+    {
+      "id": 5,
+      "name": "Alfred",
+      "module": "Backend"
+    },
+    {
+      "id": 7,
+      "name": "Fer",
+      "module": "Backend"
     }
   ]
 }

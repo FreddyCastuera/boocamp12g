@@ -16,33 +16,51 @@ server.get('/koders',async (request, response) => {
     let koders = await fs.readFile('./koders.json','utf-8');
     let objecto = JSON.parse(koders)
     if(Object.keys(request.query).length==2){
-        const [nombre,genero] = Object.values(request.query);
+        const [nombre,genero,limite] = Object.values(request.query);
         console.log(nombre,genero)
         let filtro = objecto.koders.filter(koder=>{
             return koder.name.includes(nombre) && koder.genero==genero
         });
-        response.json(filtro);
+        if(limite){
+            response.json(filtro.slice(0,parseInt(limite)));
+        }
+        else{
+            response.json(filtro);
+        }
     }
     else if(Object.keys(request.query).length==1){
         if( Object.keys(request.query)[0]=="nombre"){
-            const nombre = Object.values(request.query)[0]; 
+            const {nombre,genero,limite} = Object.values(request.query); 
             let filtro = objecto.koders.filter(koder=>koder.name.includes(nombre));
-            response.json(filtro);
-
+            if(limite){
+                response.json(filtro.slice(0,parseInt(limite)));
+            }
+            else{
+                response.json(filtro);
+            }
         }
         if(Object.keys(request.query)[0]=="genero"){
-            const genero = Object.values(request.query)[0]; 
+            const {nombre,genero,limite} = Object.values(request.query); 
             console.log(genero);
             let filtro = objecto.koders.filter(koder=>koder.genero == genero);
-            response.json(filtro);
-
+            if(limite){
+                response.json(filtro.slice(0,parseInt(limite)));
+            }
+            else{
+                response.json(filtro);
+            }
         }
     }
     else{
-        response.json(JSON.parse(koders));
+        const {nombre,genero,limite} = Object.values(request.query); 
+        if(limite){
+            response.json(objecto.koders);
+        }
+        else{
+            response.json(objecto.koders.slice(0,parseInt(limite)));
+        }
     }
 })
-
 server.post('/koders', async (request, response) => {
         let data = await fs.readFile('./koders.json','utf-8');
         const body = request.body;
@@ -91,10 +109,6 @@ server.delete('/koders/:id', async (request, response) => {
     await fs.writeFile('./koders.json',newKodersString);
     response.json(objeto);
 })
-
-
-
-
 server.listen(8080, () => {
     console.log('listening on port localhost: 8080')
 })
