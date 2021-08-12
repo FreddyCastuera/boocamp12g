@@ -5,7 +5,7 @@ const koderSchema = new mongoose.Schema({
         type:String,
         minLength:2,
         maxLength:50,
-        required:true,
+        require:true,
         trim:true
     },
     lastName:{
@@ -19,19 +19,19 @@ const koderSchema = new mongoose.Schema({
         type:Number,
         min:0,
         max:90,
-        required:true,
+        require:true,
         
     },
     gender:{
         type:String,
         enum:['m','f'],
-        required:true
+        require:true
     },
     generation:{
         type:Number,
         min:1,
         max:13,
-        required
+        require
     }
 })
 //model

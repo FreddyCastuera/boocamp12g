@@ -18,27 +18,12 @@ server.get('/',(request,response)=>{
 //GET /koders?gender=m&age=23, filtros por diferentes campos
 server.get('/koders',async (request,response)=>{
     console.log(request.query);
-    const {name,lastName,gender,generation,age} = request.query;
-    let koders = await Koder.find({})
-    if(name){
-        koders = koders.filter(koder=>koder.name==name);
-    }
-    if(lastName){
-        koders = koders.filter(koder=>koder.lastName==lastName);
-    }
-    if(gender){
-        koders = koders.filter(koder=>koder.gender==gender);
-    }
-    if(age){
-        koders = koders.filter(koder=>koder.age==parseInt(age));
-    }
-    if(generation){
-        koders = koders.filter(koder=>koder.generation==parseInt(generation))
-    }
+    //desestructuramos el request.query
+    let koders = await Koder.find({...request.query})
     console.log(koders)
     response.json({
         succes:true,
-        message:'all koders of DB',
+        message:'koders of DB',
         data:{
             koders
         }
@@ -46,32 +31,45 @@ server.get('/koders',async (request,response)=>{
 })
 //POST /koders
 server.post('/koders',async (request,response)=>{
-    console.log(request.body)
-    const koderCreated = await Koder.create(request.body)
-    console.log(koderCreated);
-    let koders = await Koder.find({})
-    response.json({
-        succes:true,
-        message:'all koders of DB',
-        data:{
-            koders
-        }
-    })
+    try{
+        console.log(request.body)
+        const koderCreated = await Koder.create(request.body)
+        console.log(koderCreated);
+        response.json({
+            succes:true,
+            message:'posteamos un koder',
+            data:{
+                koders:koderCreated
+            }
+        })
+    }
+    catch(err){
+        response.status(400).json({
+            succes:false,
+            message:erro.message
+        })
+        console.log(err)
+    }
 })
 //PATCH /koders:id
 server.patch('/koders/:id',async (request,response)=>{
     const {id} = request.params;
     const _id = mongoose.Types.ObjectId(id);
     console.log(_id);
-    await Koder.updateOne({_id:_id},request.body)
-    let koders = await Koder.find({})
-    response.json({
-        succes:true,
-        message:'all koders of DB',
-        data:{
-            koders
-        }
-    })
+    try{
+        let koder = await Koder.updateOne({_id:_id},request.body)
+        response.json({
+            succes:true,
+            message:'modificamos un koder',
+            data:{
+                koder
+            }
+        })
+    }
+    catch(err){
+        console.log(err)
+    }
+
 })
 //DELETE /koders:id
 server.delete('/koders/:id',async (request,response)=>{
@@ -82,7 +80,7 @@ server.delete('/koders/:id',async (request,response)=>{
     let koders = await Koder.find({})
     response.json({
         succes:true,
-        message:'all koders of DB',
+        message:'eliminamos un koder',
         data:{
             koders
         }
