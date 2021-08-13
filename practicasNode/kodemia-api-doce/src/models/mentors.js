@@ -5,7 +5,7 @@ const mentorSchema = new mongoose.Schema({
         type:String,
         minLength:2,
         maxLength:50,
-        require:true,
+        required:true,
         trim:true
     },
     lastName:{
@@ -18,14 +18,14 @@ const mentorSchema = new mongoose.Schema({
     gender:{
         type:String,
         enum:['m','f'],
-        require:true
+        required:true
     },
     module:{
         type:[String],
         enum:['Maquetado','Js','Cloud','Backend','React'],
         min:1,
         max:13,
-        require:true
+        required:true
     }
 })
 //model

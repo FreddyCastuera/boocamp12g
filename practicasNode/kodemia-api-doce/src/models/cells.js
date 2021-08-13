@@ -8,7 +8,7 @@ const cellSchema= new mongoose.Schema({
         type:String,
         minLength:2,
         maxLength:50,
-        require:true,
+        required:true,
         trim:true
     },
     mentors: [{ type: mongoose.Schema.ObjectId, ref: "mentors" }],
