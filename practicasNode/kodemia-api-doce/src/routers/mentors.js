@@ -1,15 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const Koders = require('../usecases/koders');
+const Mentors = require('../usecases/mentors');
 router.use(express.json());
 router.get('/',async (request,response)=>{
     try{
-        const allKoders = await Koders.getAll();
+        const allMentors = await Mentors.getAll();
         response.json({
             success:true,
-            message:'All Koders',
+            message:'Todos los mentores',
             data:{
-                koders:allKoders
+                mentors:allMentors
             }
         })
     }
@@ -18,20 +18,45 @@ router.get('/',async (request,response)=>{
             .status(400)
             .json({
                 success:false,
-                message:'Error al obtener los coders',
+                message:'Error al obtener los mentores',
+                error:error.message
+            })
+        }
+})
+router.get('/:id',async (request,response)=>{
+    try{
+        const {id} = request.params;
+        const mentor = await Mentors.getOne(id);
+        response.json({
+            success:true,
+            message:'Un mentor',
+            data:{
+                mentor:mentor
+            }
+        })
+    }
+    catch(error){
+        response
+            .status(400)
+            .json({
+                success:false,
+                message:'Error al obtener el mentor',
                 error:error.message
             })
         }
 })
 
+
+
 router.post('/',async (request,response)=>{
     try{
-        const koderCreated = await Koders.create(request.body);
+        const MentorCreated = await Mentors.create(request.body);
+        console.log(request.body)
         response.json({
             success:true,
-            message:'Koder creado',
+            message:'mentor crerado',
             data:{
-                koders:koderCreated
+                mentors:MentorCreated
             }
         })
     }
@@ -40,7 +65,7 @@ router.post('/',async (request,response)=>{
             .status(400)
             .json({
                 success:false,
-                message:'Error al crear al koder',
+                message:'Error al crear al mentor',
                 error:error.message
             })
         }
@@ -48,12 +73,12 @@ router.post('/',async (request,response)=>{
 router.delete('/:id',async (request,response)=>{
     try{
         const {id} = request.params;
-        const koderDeleted = await Koders.deleteById(id);
+        const mentorDeleted = await Mentors.deleteById(id);
         response.json({
             success:true,
-            message:'Koder eliminado',
+            message:'mentor eliminado',
             data:{
-                koders:koderDeleted
+                mentors:mentorDeleted
             }
         })
     }
@@ -62,7 +87,7 @@ router.delete('/:id',async (request,response)=>{
             .status(400)
             .json({
                 success:false,
-                message:'Error al eliminar al koder',
+                message:'Error al eliminar al mentor',
                 error:error.message
             })
         }
@@ -72,12 +97,12 @@ router.patch('/:id',async (request,response)=>{
         const {id} = request.params;
         const {body} = request;
         console.log(id,body)
-        const koderUpdated = await Koders.updateById(id,body);
+        const mentorUpdated = await Mentors.updateById(id,body);
         response.json({
             success:true,
-            message:'Koder Actualizado',
+            message:'Mentor Actualizado',
             data:{
-                koders:koderUpdated
+                mentros:mentorUpdated
             }
         })
     }
@@ -86,7 +111,7 @@ router.patch('/:id',async (request,response)=>{
             .status(400)
             .json({
                 success:false,
-                message:'Error al actualizar al koder',
+                message:'Error al actualizar al mentor',
                 error:error.message
             })
         }

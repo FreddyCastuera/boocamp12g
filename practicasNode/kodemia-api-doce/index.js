@@ -8,8 +8,8 @@ const dbConnect = require('./src/lib/db.js')
 dbConnect()
     .then(()=>{
         console.log('Database connected');
-        server.listen(8080,()=>{
-            console.log('server listening on 8080');
+        server.listen(3021,()=>{
+            console.log('server listening on 8085');
         })
     })
     .catch(err=>console.log(err))

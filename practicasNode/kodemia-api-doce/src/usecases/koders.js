@@ -3,16 +3,19 @@ const mongoose = require('mongoose');
 function getAll(){
     return Koder.find();
 }
-function createKoder(koder){
+function create(koder){
     return Koder.create(koder);
 }
-function deleteKoder(id){
-    const _id = mongoose.Types.ObjectId(id);
-    return Koder.deleteOne({_id})
+function deleteById(id){
+    return Koder.findByIdAndDelete(id)
+}
+function updateById(id,newData){
+    return Koder.findByIdAndUpdate(id,newData,{new:true})
 }
 
 module.exports = {
     getAll,
-    createKoder,
-    deleteKoder
+    create,
+    deleteById,
+    updateById
 }
